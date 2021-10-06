@@ -127,13 +127,13 @@ app.post('/join', checkAuthenticated, async(req, res)=>{
                 if(valid){
                     res.render('room.hbs')
                     io.on('connection', (socket) => {
-                        console.log(`${req.user.name} connected!`);
+                        // console.log(`${req.user.name} connected!`);
                         socket.on('message', (evt) => {
                             // console.log(evt)
                             socket.broadcast.emit('message', evt)
                         })
                         socket.on('disconnect', ()=>{
-                            console.log(`${req.user.name} disconnected!`);
+                            // console.log(`${req.user.name} disconnected!`);
                         })
                     });
                 }
@@ -168,5 +168,5 @@ function checkNotAuthenticated(req, res, next){
 }
 
 server.listen(port, ()=>{
-    console.log(`Server is listening on port ${port}`);
+    // console.log(`Server is listening on port ${port}`);
 })
