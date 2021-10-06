@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 10%;
+        }
+        a{
+            padding: 2%;
+        }
+        button{
+            padding: 8px;
+            width: 200px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 2%;
+        }
+        input{
+            width: 200px;
+            padding: 2%;
+            margin: 5%;
+            height: 35px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    {{>header}}
+    <div class="container">
+        <h2>Log In</h2>
+        <form action="/login" method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
