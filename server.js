@@ -97,7 +97,7 @@ app.post('/create', checkAuthenticated, async(req, res)=>{
         room.password = room.hashedPassword(room.password)
         room.adminEmail = req.user.email
         await room.save()
-        return res.send(room)
+        return res.render('joinroom')
     }
     catch(e){
         return res.render('swr')
